@@ -1,0 +1,16 @@
+1) El componente CinemaRESTAPI funcionará en un entorno concurrente. Es decir, atederá múltiples peticiones simultáneamente 
+(con el stack de aplicaciones usado, dichas peticiones se atenderán por defecto a través múltiples de hilos). Dado lo anterior, 
+debe hacer una revisión de su API (una vez funcione), e identificar:
+ 	-- Qué condiciones de carrera se podrían presentar?
+		Se puede presentar cuando se quiera realizar un post ya que se puede dar el caso que mientras se este agregando una nueva 
+		funcion otro hilo este consultando la lista de funciones y no la encuentre
+	
+		Tambien al momento de hacer un PUT debido a que un hilo puede estar consultando la lista de funciones para una pelicula en especial 
+		pero hay otro hilo que esta modificando esa misma pelicula que esta consultando 
+	
+	-- Cuales son las respectivas regiones críticas?
+		El elemento que se agrega en el POST que para este caso es la lista de funciones y lo que modifica el POST como los asientos
+2) se deben buscar estrategias alternativas:
+	
+	Una de las estrategias es remplazar la lista de funciones por una que tenga el estilo de Thread-safe que en este caso es CopyOnWriteArrayList
+	y de esta manera implementar un hashmap que sea de tipo thread-safe 

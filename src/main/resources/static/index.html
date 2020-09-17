@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <script src="/webjars/jquery/jquery.min.js"></script>
+    <script src="/webjars/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <script src="js/apimock.js"></script>
+    <script src="js/app.js"></script>
+    <link rel="stylesheet"
+      href="/webjars/bootstrap/3.3.7/css/bootstrap.min.css" />
+    <title>Cinema bookings</title>
+    <h1>Cinema bookings</h1>
+</head>
+<body>
+    <div>
+        <label for="Cinema">Cinema</label> 
+        <input type="text" name="Name"  id="name" placeholder="Name">
+        <input type="date" name="calendario" placeholder="Date" id="Fecha">
+        <button type="button" id="boton" onclick="app.setCinema(); app.setFecha">Get functions</button>
+    </div>|
+    <br>
+    <br>
+    <br>
+    <div>
+        <label for="Cine selecionado">Cinema selected</label>
+        <label for="peliculas">Movies</label>
+    </div>
+    <br>
+    <br>
+    <div>
+        <table class="Funciones">
+            <tr>
+                <th>Name</th>
+                <th>Genre</th>
+                <th>Hour</th>
+                <th>Availability</th>
+            </tr>
+        </table>
+    </div>
+</body>
+</html>
