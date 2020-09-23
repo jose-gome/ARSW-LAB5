@@ -3,12 +3,12 @@ var app = (function () {
     var fecha = "";
     var listado = [];
     
-  return ( 
+  return {
       setCinema: function(){
         cinemaSeleccionado = $("#name").val();
-      }
+      },
       setFecha: function(){
-        fecha = $(#"fecha".val();
+        fecha = $("#fecha".val());
       }
-  )
+  }
   })();
