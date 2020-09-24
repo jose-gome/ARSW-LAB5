@@ -69,7 +69,7 @@ public class CinemaServices implements CinemaServicesInterface {
         return cps.getFunctionsbyCinemaAndDate(cinema, date);
     }
     @Override
-    public List<CinemaFunction> getFunctionsbyCinemaAndDate(String cinema, String date, String movie) throws CinemaPersistenceException {
+    public CinemaFunction getFunctionsbyCinemaAndDate(String cinema, String date, String movie) throws CinemaPersistenceException {
         return cps.getFunctionsbyCinemaAndDate(cinema, date, movie);
     }
     @Override
@@ -90,4 +90,5 @@ public class CinemaServices implements CinemaServicesInterface {
 	public void modFuncion(String cinema, CinemaFunction funcion) throws CinemaPersistenceException {
 		cps.modfuncion(cinema,funcion);
 	}
+	
 }

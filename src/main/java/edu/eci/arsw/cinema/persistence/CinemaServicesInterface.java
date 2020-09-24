@@ -23,7 +23,7 @@ public interface CinemaServicesInterface {
 
 	Set<Cinema> getAllCinemas() throws CinemaException;
 
-	List<CinemaFunction> getFunctionsbyCinemaAndDate(String cinema, String date, String movie)throws CinemaPersistenceException;
+	CinemaFunction getFunctionsbyCinemaAndDate(String cinema, String date, String movie)throws CinemaPersistenceException;
 
 	void addfuncion(String cinema, CinemaFunction funcion) throws CinemaPersistenceException;
 

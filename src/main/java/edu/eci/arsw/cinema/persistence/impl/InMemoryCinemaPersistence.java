@@ -94,7 +94,7 @@ public class InMemoryCinemaPersistence implements CinemaPersitence{
 		return funcionesFecha;
 	}
 	@Override
-	public List<CinemaFunction> getFunctionsbyCinemaAndDate(String cinema, String date, String movie) throws CinemaPersistenceException {
+	public CinemaFunction getFunctionsbyCinemaAndDate(String cinema, String date, String movie) throws CinemaPersistenceException {
 		if(cinemas.get(cinema) == null) {
 			throw new CinemaPersistenceException("no existe el cinema");
 		}
@@ -103,11 +103,11 @@ public class InMemoryCinemaPersistence implements CinemaPersitence{
 			throw new CinemaPersistenceException("El formato de la fecha esta incorrecto debe ser YYYY-MM-DD");
 		}
 		Cinema cineElegido = cinemas.get(cinema);
-		List<CinemaFunction> funcionesFecha = new ArrayList<CinemaFunction>();
+		CinemaFunction funcionesFecha = null;
 		for(CinemaFunction i : cineElegido.getFunctions()) {
 			if(i.getMovie().getName().equals(movie)){
 				if(i.getDate().equals(date)) {
-					funcionesFecha.add(i);
+					funcionesFecha= i;
 				}
 			}
 		}

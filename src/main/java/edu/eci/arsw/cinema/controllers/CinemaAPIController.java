@@ -52,6 +52,7 @@ public class CinemaAPIController {
 	}
 	@RequestMapping(value = "/{name}/{fecha}", method = RequestMethod.GET)
 	public ResponseEntity<?> getFuncionsByDate(@PathVariable String name, @PathVariable String fecha){
+		System.out.println(name + fecha);
 		try {
 			return new ResponseEntity<>(css.getFunctionsbyCinemaAndDate(name, fecha), HttpStatus.ACCEPTED);
 		} catch (CinemaPersistenceException e) {
@@ -61,6 +62,7 @@ public class CinemaAPIController {
 	@RequestMapping(value = "/{name}/{fecha}/{movie}", method = RequestMethod.GET)
 	public ResponseEntity<?> getMovieByDate(@PathVariable String name, @PathVariable String fecha, @PathVariable String movie){
 		try {
+			System.out.println(css.getFunctionsbyCinemaAndDate(name, fecha, movie));
 			return new ResponseEntity<>(css.getFunctionsbyCinemaAndDate(name, fecha, movie), HttpStatus.ACCEPTED);
 		} catch (CinemaPersistenceException e) {
 			return new ResponseEntity<>( e.getMessage(), HttpStatus.NOT_FOUND);
